@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Encuestas</title>
+</head>
+<body>
+    <h1>Encuestas Disponibles</h1>
+    <ul>
+    {% for encuesta in encuestas %}
+        <li>{{ encuesta.texto_encuesta }} - {% if encuesta.activa %}Activa{% else %}Desactivada{% endif %} - Calificación: {{ encuesta.calificacion }}</li>
+    {% empty %}
+        <li>No hay encuestas disponibles.</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

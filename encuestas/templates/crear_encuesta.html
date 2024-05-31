@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Encuesta</title>
+</head>
+<body>
+    <h1>Crear Nueva Encuesta</h1>
+    <form action="{% url 'guardar_encuesta' %}" method="post">
+        {% csrf_token %}
+        <label for="texto_encuesta">Texto de la Encuesta:</label><br>
+        <input type="text" id="texto_encuesta" name="texto_encuesta"><br>
+        <input type="checkbox" id="activa" name="activa" value="activa">
+        <label for="activa">Activar Encuesta</label><br>
+        <button type="submit">Guardar Encuesta</button>
+    </form>
+</body>
+</html>
